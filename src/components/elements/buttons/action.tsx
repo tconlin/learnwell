@@ -18,8 +18,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className={`
       ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} 
       ${
-        buttonType === ButtonTypes.PRIMARY ? "bg-tertiaryColor" : "bg-gray-300"
-      } text-white px-6 py-3 rounded-xl hover:bg-tertiaryColorDark w-full flex items-center justify-center focus:ring-2 focus:ring-tertiaryColor focus:ring-opacity-50`}
+        buttonType === ButtonTypes.PRIMARY ? "bg-teal-500" : "bg-gray-300"
+      } text-white px-3 py-2 rounded-xl hover:bg-teal-600 w-full flex items-center justify-center focus:ring-2 focus:ring-teal-300 focus:ring-opacity-50`}
       {...props}
     >
       {isLoading ? (
@@ -28,7 +28,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             color={
               buttonType === ButtonTypes.PRIMARY
                 ? "text-white"
-                : "text-primaryColor"
+                : "text-gray-900"
             }
           >
             {text}
@@ -41,10 +41,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         </div>
       ) : (
         <P
+          size="text-sm"
           color={
-            buttonType === ButtonTypes.PRIMARY
-              ? "text-white"
-              : "text-primaryColor"
+            buttonType === ButtonTypes.PRIMARY ? "text-white" : "text-gray-900"
           }
         >
           {text}
