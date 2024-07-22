@@ -23,7 +23,7 @@ export const CircularProgress = ({
         className={`${getSizeClass()} ${
           color === "light"
             ? "text-white fill-gray-400"
-            : "text-blue-700 fill-blue-100"
+            : "text-teal-700 fill-teal-100"
         } animate-spin `}
         viewBox="0 0 100 101"
         fill="none"
