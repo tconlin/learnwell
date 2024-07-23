@@ -7,7 +7,7 @@ interface PageContainerProps extends ComponentProps<"div"> {}
 export const PageContainer = forwardRef<HTMLDivElement, PageContainerProps>(
   (props, ref) => (
     <main ref={ref} className="flex min-h-screen justify-center w-screen">
-      <div className="mx-auto max-w-7xl px-6 py-14">{props.children}</div>
+      <div className="mx-auto px-6 py-14">{props.children}</div>
     </main>
   )
 );

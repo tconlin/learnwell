@@ -10,9 +10,9 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>(
   ({ children, color, size, ...props }, ref) => (
     <span
       ref={ref}
-      className={`${color ? color : "text-primaryColor"} ${
+      className={`${color ? color : "text-gray-900"} ${
         size ? size : "text-base"
-      } font-inter`}
+      } font-outfit`}
       {...props}
     >
       {children}
@@ -30,9 +30,9 @@ export const P = forwardRef<HTMLParagraphElement, PProps>(
   ({ children, color, size, weight, ...props }, ref) => (
     <p
       ref={ref}
-      className={`${color ? color : "text-secondaryColor"} ${
+      className={`${color ? color : "text-gray-900"} ${
         size ? size : "text-base"
-      } ${weight ? weight : "font-light"} font-inter`}
+      } ${weight ? weight : "font-light"} font-outfit`}
       {...props}
     >
       {children}
@@ -46,7 +46,7 @@ export const H1 = forwardRef<HTMLHeadingElement, H1Props>(
   ({ children, ...props }, ref) => (
     <h1
       ref={ref}
-      className="text-3xl font-bold text-primaryColor font-inter"
+      className="text-2xl font-semibold text-gray-900 font-outfit"
       {...props}
     >
       {children}
@@ -57,9 +57,17 @@ export const H1 = forwardRef<HTMLHeadingElement, H1Props>(
 interface H2Props extends ComponentProps<"h2"> {}
 
 export const H2 = forwardRef<HTMLHeadingElement, H2Props>((props, ref) => (
-  <h2 ref={ref} className="text-2xl font-bold text-primaryColor" {...props} />
+  <h2
+    ref={ref}
+    className="text-xl font-semibold text-gray-900 font-outfit"
+    {...props}
+  />
 ));
 
 export const H3 = forwardRef<HTMLHeadingElement, H2Props>((props, ref) => (
-  <h2 ref={ref} className="text-xl font-medium text-primaryColor" {...props} />
+  <h2
+    ref={ref}
+    className="text-lg font-medium text-gray-900 font-outfit"
+    {...props}
+  />
 ));

@@ -18,6 +18,7 @@ export const Img = forwardRef<HTMLImageElement, ImageProps>(
           src={source}
           width={width}
           height={height}
+          priority
           alt={alt ? alt : "Learnwell educational videos"}
         />
       </Link>
@@ -26,6 +27,7 @@ export const Img = forwardRef<HTMLImageElement, ImageProps>(
         src={source}
         width={width}
         height={height}
+        priority
         alt={alt ? alt : "Learnwell educational videos"}
       />
     )

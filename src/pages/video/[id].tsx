@@ -1,22 +1,32 @@
 import { useRouter } from "next/router";
 import { Video } from "@/types";
 import { useState, useEffect } from "react";
-import { getVideoById } from "@/lib/api/video";
 import { CircularProgress } from "@/components/utils/circularProgress";
 import { VideoPlayer } from "@/components/player";
+import { Feed } from "@/components/feed";
+import { getFeedContent } from "@/lib/api/video";
 
 export default function VideoDetail() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [video, setVideo] = useState<Video | null>(null);
+  const [videoFeed, setVideoFeed] = useState<Video[]>([]);
+  const { id } = router.query;
 
   async function getVideo() {
     try {
       setIsLoading(true);
-      const videoId = router.query.id as string;
-      if (!videoId) throw new Error("videoId is undefined");
-      const video: Video = await getVideoById({ videoId });
-      setVideo(video);
+      const videoId = id as string;
+      if (videoId) {
+        const user_id = "tconlin";
+        const content: Video[] = await getFeedContent({ userId: user_id });
+        const filteredContent = content.filter((v) => v.id !== videoId);
+        const mainVideoIndex = content.findIndex((v) => v.id === videoId);
+        if (mainVideoIndex === -1)
+          throw new Error("main video not found in feed");
+        setVideoFeed(filteredContent);
+        setVideo(content[mainVideoIndex]);
+      }
     } catch (e) {
       console.error(e);
     } finally {
@@ -26,7 +36,7 @@ export default function VideoDetail() {
 
   useEffect(() => {
     getVideo();
-  }, []);
+  }, [id]);
 
   if (isLoading || !video) {
     return (
@@ -37,15 +47,13 @@ export default function VideoDetail() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <VideoPlayer url={video.video_url} />
+    <div className="flex-col md:grid md:grid-cols-6">
+      <div className="md:col-span-4 m-2">
+        <VideoPlayer video={video} />
+      </div>
+      <div className="md:col-span-2 m-2">
+        <Feed videoFeed={videoFeed} verticalFeed={true} />
+      </div>
     </div>
   );
-}
-
-// necessary empty function to handle page refresh with router.query
-export async function getServerSideProps() {
-  return {
-    props: {},
-  };
 }

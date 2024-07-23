@@ -2,14 +2,19 @@ import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Img } from "@/components/elements/image";
 import { Button } from "@/components/elements/buttons/action";
 import { ButtonTypes } from "@/types";
+import { useRouter } from "next/router";
 
 export const NavBar = () => {
+  const router = useRouter();
   return (
     <div className="bg-white shadow-sm static lg:overflow-y-visible mb-4">
       <div className="mx-auto max-w-7xl px-4">
         <div className="relative flex justify-between">
           <div className="flex static">
-            <div className="flex flex-shrink-0 items-center">
+            <div
+              className="flex flex-shrink-0 items-center cursor-pointer"
+              onClick={() => router.push("/")}
+            >
               <Img source={"/FULL_LOGO_COLOR.png"} height={144} width={144} />
             </div>
           </div>
