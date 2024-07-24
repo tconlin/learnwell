@@ -67,7 +67,7 @@ npm run dev
 
 ## ⭐ Wish List
 
-- 📺 Standardize video player and video encoding using [mux]([https://firebase.google.com/docs/firestore/query-data/listen](https://www.mux.com/player))
+- 📺 Standardize video player and video encoding using [mux](https://www.mux.com/player)
 - 🔧 Video feed should not be tied to a fixed username
 - 🧪 Testing suite using [jest](https://jestjs.io/)
 - 🎨 More clearly define brand colors in tailwind
@@ -89,6 +89,6 @@ npm run dev
 
 ## 📖 Background
 
-This is a take home assignment for [Scope Labs]([https://www.getlago.com/](https://www.scopelabs.com/)) by [Taylor Conlin](https://taylorconlin.xyz/)
+This is a take home assignment for [Scope Labs](https://www.scopelabs.com/) by [Taylor Conlin](https://taylorconlin.xyz/)
 
 👉 Further documentation can be found on [10Fold](https://app.10foldhiring.com/showcase/1). 👈
