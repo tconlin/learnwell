@@ -73,6 +73,20 @@ npm run dev
 - 🎨 More clearly define brand colors in tailwind
 - 🔒 Add lightweight auth layer so users can login to add comments and usernames can be dynamic
 
+## 📷 Screenshots
+
+### Homepage Video Feed
+![Homepage - video feed](https://github.com/user-attachments/assets/fc98afa0-eae9-415a-9d50-9e2c91194b49)
+
+### Create Video Form
+![Create Video Form](https://github.com/user-attachments/assets/4583f195-0405-45b2-8500-500298af20a5)
+
+### Video Detail Page
+![Video Detail Page](https://github.com/user-attachments/assets/69da9be5-3749-4122-926b-bef10b974985)
+
+### Comment Section
+![Comment Section](https://github.com/user-attachments/assets/67f572f1-5de8-4d92-9680-e9a90fade194)
+
 ## 📖 Background
 
 This is a take home assignment for [Scope Labs]([https://www.getlago.com/](https://www.scopelabs.com/)) by [Taylor Conlin](https://taylorconlin.xyz/)
