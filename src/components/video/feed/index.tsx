@@ -1,5 +1,5 @@
 import { Video } from "@/types";
-import { VideoThumbnail } from "@/components/player/thumbnail";
+import { VideoThumbnail } from "@/components/video/player/thumbnail";
 
 export const Feed = ({
   videoFeed,

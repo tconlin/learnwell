@@ -3,9 +3,13 @@ import { Img } from "@/components/elements/image";
 import { Button } from "@/components/elements/buttons/action";
 import { ButtonTypes } from "@/types";
 import { useRouter } from "next/router";
+import { useSetAtom } from "jotai";
+import { drawerOpenAtom } from "@/store/app";
 
 export const NavBar = () => {
   const router = useRouter();
+  const setDrawerOpen = useSetAtom(drawerOpenAtom);
+
   return (
     <div className="bg-white shadow-sm static lg:overflow-y-visible mb-4">
       <div className="mx-auto max-w-7xl px-4">
@@ -43,7 +47,11 @@ export const NavBar = () => {
             </div>
           </div>
           <div className="flex items-center justify-end">
-            <Button text="Upload" buttonType={ButtonTypes.PRIMARY} />
+            <Button
+              text="Upload"
+              buttonType={ButtonTypes.PRIMARY}
+              onClick={() => setDrawerOpen(true)}
+            />
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 "use client";
 
-import { Feed } from "@/components/feed";
+import { Feed } from "@/components/video/feed";
 import { useEffect, useState } from "react";
 import { getFeedContent } from "@/lib/api/video";
 import { Video } from "@/types";
 import { CircularProgress } from "@/components/utils/circularProgress";
-
+import { USER_ID } from "@/utils/globals";
 function Home() {
   const [videoFeed, setVideoFeed] = useState<Video[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -13,8 +13,7 @@ function Home() {
   async function loadFeed() {
     try {
       setIsLoading(true);
-      const user_id = "tconlin";
-      const content: Video[] = await getFeedContent({ userId: user_id });
+      const content: Video[] = await getFeedContent({ userId: USER_ID });
       setVideoFeed(content);
     } catch (e) {
       console.error(e);

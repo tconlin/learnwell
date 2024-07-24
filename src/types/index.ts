@@ -1,8 +1,12 @@
-import type { Video } from "@/lib/db/schema";
+import type { Video, Comment } from "@/lib/db/schema";
 
 export enum ButtonTypes {
   PRIMARY = "primary",
   SECONDARY = "secondary",
 }
 
-export { Video };
+export enum FormTypes {
+  ADD_VIDEO = "addVideo",
+}
+
+export { Video, Comment };

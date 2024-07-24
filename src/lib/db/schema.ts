@@ -8,8 +8,10 @@ export interface Video {
   title: string;
 }
 
-export interface User {
+export interface Comment {
   id: string;
-  ipAddress: string;
-  username: string;
+  created_at: string;
+  content: string;
+  user_id: string;
+  video_id: string;
 }

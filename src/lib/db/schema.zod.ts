@@ -10,3 +10,24 @@ export const VideoSchema = z.object({
   user_id: z.string(),
   title: z.string(),
 });
+
+export const VideoToCreateSchema = z.object({
+  video_url: z.string().url(),
+  description: z.string(),
+  user_id: z.string(),
+  title: z.string(),
+});
+
+export const CommentSchema = z.object({
+  id: z.string(),
+  created_at: z.string(),
+  content: z.string(),
+  user_id: z.string(),
+  video_id: z.string(),
+});
+
+export const CommentToCreateSchema = z.object({
+  content: z.string(),
+  user_id: z.string(),
+  video_id: z.string(),
+});
