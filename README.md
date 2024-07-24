@@ -74,6 +74,7 @@ npm run dev
 
 - 📺 Standardize video player and video encoding using [mux](https://www.mux.com/player)
 - 🔧 Video feed should not be tied to a fixed username
+- 🔍 Implement search
 - 🧪 Testing suite using [jest](https://jestjs.io/)
 - 🎨 More clearly define brand colors in tailwind
 - 🔒 Add lightweight auth layer so users can login to add comments and usernames can be dynamic
