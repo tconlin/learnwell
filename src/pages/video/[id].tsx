@@ -74,6 +74,17 @@ export default function VideoDetail() {
         await getCommentFeed();
       }
       setNewComment("");
+      if (!video) return;
+      const videoWithNewCommentCount: Video = {
+        num_comments: video.num_comments + 1,
+        id: video.id,
+        video_url: video.video_url,
+        created_at: video.created_at,
+        description: video.description,
+        title: video.title,
+        user_id: video.user_id,
+      };
+      setVideo(videoWithNewCommentCount);
     } catch (e) {
       console.error(e);
     } finally {
