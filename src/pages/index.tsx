@@ -6,6 +6,7 @@ import { getFeedContent } from "@/lib/api/video";
 import { Video } from "@/types";
 import { CircularProgress } from "@/components/utils/circularProgress";
 import { USER_ID } from "@/utils/globals";
+
 function Home() {
   const [videoFeed, setVideoFeed] = useState<Video[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);

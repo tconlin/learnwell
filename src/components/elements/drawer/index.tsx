@@ -18,7 +18,7 @@ export const Drawer = ({ formType }: { formType: FormTypes }) => {
               transition
               className="pointer-events-auto w-screen max-w-2xl transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
             >
-              {formType == FormTypes.ADD_VIDEO ? <CreateVideoForm /> : null}
+              {formType == FormTypes.ADD_VIDEO && <CreateVideoForm />}
             </DialogPanel>
           </div>
         </div>

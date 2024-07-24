@@ -28,7 +28,7 @@ export const VideoThumbnail = ({ video }: { video: Video }) => {
       <div className="flex mt-3">
         <div className="flex items-start">
           <div className="flex flex-col ml-3 overflow-hidden">
-            <H1>{video.title}</H1>
+            <H1 numberOfLines={2}>{video.title}</H1>
             <div className="flex items-center justify-start pt-2">
               <P>{video.user_id}</P>
               <span className="px-2">&#x2022;</span>

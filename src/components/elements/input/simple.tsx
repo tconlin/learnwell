@@ -10,6 +10,7 @@ export default function Input({
   onChange,
   label,
   placeholder,
+  chatBubbleIcon = false,
   maxLength,
   error,
   showSuccess,
@@ -20,6 +21,7 @@ export default function Input({
   value: string;
   onChange: (value: string) => void;
   label?: string;
+  chatBubbleIcon?: boolean;
   placeholder?: string;
   maxLength?: number;
   isLoading?: boolean;
@@ -39,9 +41,11 @@ export default function Input({
         </label>
       )}
       <div className="relative mt-2 rounded-md shadow-sm">
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3">
-          <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 text-gray-500" />
-        </div>
+        {chatBubbleIcon && (
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3">
+            <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 text-gray-500" />
+          </div>
+        )}
 
         <input
           id="input-field"
@@ -53,11 +57,11 @@ export default function Input({
           placeholder={placeholder ?? ""}
           aria-invalid={error ? "true" : undefined}
           aria-describedby="input-error"
-          className={`${
+          className={`${chatBubbleIcon ? "pl-12" : "pl-4"} ${
             error
               ? "border-red-600 ring-red-300 focus:ring-red-500 focus:border-red-500"
               : "border-gray-300 text-gray-900 ring-gray-300 placeholder:text-gray-400 focus:ring-teal/20 focus:border-teal"
-          } block w-full rounded-xl border-0 py-2 pl-12 pr-8 text-gray-900 shadow-sm ring-1 focus:ring-2 text-sm sm:leading-6 font-light`}
+          } block w-full rounded-xl border-0 py-2  pr-8 text-gray-900 shadow-sm ring-1 focus:ring-2 text-sm sm:leading-6 font-light`}
         />
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
           {error && (

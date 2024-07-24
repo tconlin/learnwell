@@ -40,13 +40,23 @@ export const P = forwardRef<HTMLParagraphElement, PProps>(
   )
 );
 
-interface H1Props extends ComponentProps<"h1"> {}
+interface H1Props extends ComponentProps<"h1"> {
+  numberOfLines?: number;
+}
 
 export const H1 = forwardRef<HTMLHeadingElement, H1Props>(
-  ({ children, ...props }, ref) => (
+  ({ children, numberOfLines, ...props }, ref) => (
     <h1
       ref={ref}
       className="text-2xl font-semibold text-gray-900 font-outfit"
+      style={{
+        display: numberOfLines ? "-webkit-box" : undefined,
+        WebkitBoxOrient: numberOfLines ? "vertical" : undefined,
+        WebkitLineClamp: numberOfLines ? numberOfLines : undefined,
+        overflow: numberOfLines ? "hidden" : undefined,
+        textOverflow: numberOfLines ? "ellipsis" : undefined,
+        whiteSpace: numberOfLines ? "normal" : undefined,
+      }}
       {...props}
     >
       {children}

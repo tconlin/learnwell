@@ -73,6 +73,7 @@ export default function VideoDetail() {
         });
         await getCommentFeed();
       }
+      setNewComment("");
     } catch (e) {
       console.error(e);
     } finally {
@@ -112,6 +113,7 @@ export default function VideoDetail() {
                 placeholder="Add your comment..."
                 value={newComment}
                 onChange={setNewComment}
+                chatBubbleIcon={true}
               />
             </div>
             <div className="w-1/4 pl-4">
